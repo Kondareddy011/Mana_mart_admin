@@ -3,7 +3,7 @@
  * Standalone Client Logic & Real-Time API Bridge
  */
 
-const API_BASE = 'http://127.0.0.1:8008/api';
+const API_BASE = window.API_BASE_URL || localStorage.getItem('mana_admin_api_url') || 'http://127.0.0.1:8008/api';
 
 // Application State
 const state = {
