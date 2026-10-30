@@ -1,0 +1,24 @@
+{
+  "name": "mana-grocery-hub-admin",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Standalone Admin & Wholesale Mandi Procurement Portal for Mana Grocery Hub",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite --host --port 3001",
+    "start": "vite --host --port 3001",
+    "preview": "vite preview --port 3001",
+    "build": "vite build"
+  },
+  "keywords": [
+    "grocery-hub",
+    "admin-portal",
+    "procurement",
+    "mandi"
+  ],
+  "author": "Mana Grocery Hub Team",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}

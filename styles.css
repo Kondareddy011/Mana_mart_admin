@@ -1,0 +1,185 @@
+/* Mana Grocery Hub — Vijayawada Admin Portal Styles */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  --color-primary: #059669;
+  --color-primary-dark: #047857;
+  --color-primary-light: #ecfdf5;
+  --color-accent: #d97706;
+  --color-accent-light: #fef3c7;
+  --color-dark: #0f172a;
+  --color-dark-surface: #1e293b;
+  --color-border: #e2e8f0;
+  --color-muted: #64748b;
+  --color-bg: #f8fafc;
+  --color-card: #ffffff;
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 0 20px -3px rgba(5, 150, 105, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism card utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: var(--radius-md);
+}
+
+.dark-glass {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Status Badges */
+.badge-placed {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.badge-paid {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.badge-supplier {
+  background-color: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.badge-packed {
+  background-color: #ede9fe;
+  color: #6d28d9;
+  border: 1px solid #ddd6fe;
+}
+
+.badge-delivered {
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+/* Button micro-interactions */
+.btn-action {
+  transition: all 0.18s ease;
+}
+.btn-action:hover {
+  transform: translateY(-1px);
+}
+.btn-action:active {
+  transform: translateY(0);
+}
+
+/* Table styles */
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.admin-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 8px 10px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.admin-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.775rem;
+}
+
+.admin-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* Print Stylesheet for PO & Packing Lists */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print, header, aside, .btn-no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  .printable-area {
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .page-break {
+    page-break-after: always;
+  }
+}
